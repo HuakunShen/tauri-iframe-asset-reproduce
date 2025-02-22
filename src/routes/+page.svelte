@@ -2,6 +2,7 @@
   import { convertFileSrc } from "@tauri-apps/api/core";
   import { onMount } from "svelte";
 
+  const imgUrl = convertFileSrc("/", "img");
   const htmlUrl = convertFileSrc("/", "fileserver");
 
   onMount(() => {
@@ -12,6 +13,7 @@
 </script>
 
 <main class="container">
+  <img src={imgUrl} alt="" width="200" height="200" />
   <h1>iframe</h1>
   <iframe
     src={htmlUrl}
@@ -19,9 +21,3 @@
     title="fileserver"
   ></iframe>
 </main>
-
-<style>
-  iframe {
-    border: 1px solid red;
-  }
-</style>
